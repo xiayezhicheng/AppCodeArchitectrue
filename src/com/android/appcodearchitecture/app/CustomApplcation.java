@@ -5,6 +5,7 @@ import android.content.Context;
 
 import com.android.appcodearchitecture.util.CrashUtils;
 import com.android.appcodearchitecture.util.SharedPreferencesUtils;
+import com.facebook.stetho.Stetho;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -25,6 +26,15 @@ public class CustomApplcation extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
+		
+		Stetho.initialize(
+			      Stetho.newInitializerBuilder(this)
+			        .enableDumpapp(
+			            Stetho.defaultDumperPluginsProvider(this))
+			        .enableWebKitInspector(
+			            Stetho.defaultInspectorModulesProvider(this))
+			        .build());
+		
 		mInstance = this;
 		context = getApplicationContext();
 		//崩溃记录
