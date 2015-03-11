@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.appcodearchitecture"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+    
+	<!-- 允许应用程序联网-->
+	<uses-permission android:name="android.permission.INTERNET" />
+	<!-- 访问网络状态，可用于查看是否有网络,区分用户设备使用的是2G、3G或是WiFi -->
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<!-- 写入扩展存储，向扩展卡写入数据-->
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<!-- 获取用户设备的mac地址，在平板设备上，无法通过imei标示设备，我们会将mac地址作为用户的唯一标识-->
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<!-- 获取用户设备的IMEI，通过IMEI和mac来唯一的标识用户-->
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	
+    <application
+        android:allowBackup="true"
+        android:name=".app.CustomApplcation"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <meta-data android:value="54fd6538fd98c50b53000a9e" android:name="UMENG_APPKEY"/>
+		<meta-data android:value="Channel" android:name="UMENG_CHANNEL"/>
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+    </application>
+
+</manifest>

@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" >
+    <item android:id="@+id/action_iscanscroll"
+        android:title="页面滑动"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+
+    <item android:id="@+id/action_water_drop"
+        android:title="WaterDrop"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+
+    <item android:id="@+id/action_ring"
+        android:title="Ring"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+</menu>
